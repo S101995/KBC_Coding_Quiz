@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBC Game</title>
+    <link rel="stylesheet" href="css/kbc_game_page.css">
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="game-container">
+        <header>
+            <h1>Kon Banega Coder</h1>
+        </header>
+
+        <div class="img">
+            <img src="img/kbc_game_page.png" alt="KBC Game Logo" class="kbc-logo" width="100%">
+        </div>
+
+        <div id="question" class="question"></div>
+
+        <div id="timer" class="timer">00:00</div>
+
+        <div class="options">
+            <button id="answer1" class="answer"></button>
+            <button id="answer2" class="answer"></button>
+            <button id="answer3" class="answer"></button>
+            <button id="answer4" class="answer"></button>
+        </div>
+
+        <div id="prize" class="prize"></div>
+
+        <button id="next-btn" style="display:none;" onclick="nextQuestion()">Next Question</button>
+
+        <div class="lifelines">
+            <button id="phone-a-friend" class="lifeline-btn">Phone a Friend</button>
+            <button id="fifty-fifty" class="lifeline-btn">50-50</button>
+            <button id="ask-audience" class="lifeline-btn">Ask the Audience</button>
+        </div>
+        
+        <h1 id="gameMsg" ></h1>
+    </div>
+
+    <audio id="kbcOpening" src="audio/kbc_real_opening.mp3" preload="auto"></audio>
+    <audio id="new-question-sound" src="audio/kbc_new_question_sound.mp3"></audio>
+    <audio id="timerSound" src="audio/phone-a-friend-30-sec.mp3" preload="auto"></audio>
+    <audio id="" src="" preload="auto"></audio>
+
+    <div class="prize_answer">
+        <h2 id="msg"></h2>
+        <h1 id="prize-message"></h1>
+        <h3 id="answer-feedback"></h3>
+    </div>
+
+</body>
+    <script src="js/kbc_game_page.js"></script>
+
+</html>

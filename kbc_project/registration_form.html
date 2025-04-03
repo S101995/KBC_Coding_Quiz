@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/registration_from.css">
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1>Kon Bangega Coder</h1>
+        <h2>Registration Form</h2>
+        <form action="kbc_game_page.html" id="form" onsubmit="return captchaValidation()">
+            <div>
+                <img src="img/profile-analysis_17105069.png" alt="" class="dp" id="profile_pic">
+            </div>
+            <div>
+                <label for="profile">Select Your Picture</label>
+                <input type="file" name="profile" id="inputFile" accept="image/*" onchange="changeProfilePic(event)"
+                    oninput="validation()">
+            </div>
+
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" oninput="validation()" onkeypress="onlyalphabet(event)">
+            </div>
+
+            <div>
+                <label for="num">Mobile Number</label>
+                <input type="text" name="num" id="num" maxlength="10" oninput="validation()" onkeypress="onlyNumeric(event)">
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" oninput="validation()">
+            </div>
+
+            <div>
+                <label for="dob">Date Of Birth</label>
+                <input type="date" name="dob" id="dob" oninput="validation()">
+            </div>
+
+            <div class="gender-group">
+                <label for="gender">Gender :-</label>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="male" value="male" oninput="validation()">
+                <label for="female">Female</label>
+                <input type="radio" name="gender" id="female" value="female" oninput="validation()">
+                <label for="other">Other</label>
+                <input type="radio" name="gender" id="other" value="other">
+            </div>
+
+            <div class="hobby-group">
+                <label for="hobby">Hobbies :-</label>
+                <input type="checkbox" name="hobby" id="cricket" value="Cricket" oninput="validation()"><label
+                    for="cricket">Cricket</label>
+                <input type="checkbox" name="hobby" id="football" value="Football" oninput="validation()"><label
+                    for="football">Football</label>
+                <input type="checkbox" name="hobby" id="singing" value="Singing" oninput="validation()"><label
+                    for="singing">Singing</label>
+                <input type="checkbox" name="hobby" id="reading" value="Reading" oninput="validation()"><label
+                    for="reading">Reading</label>
+            </div>
+
+
+
+            <div class="state-container">
+                <label for="state">Select State</label>
+                <select name="state" id="state" oninput="validation()">
+                    <option value="">Select Your State</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujrat">Gujrat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkand">Jharkand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Mizoram">Mizoramr</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttrakhand">Uttrakhand</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="West Bengal"></option>
+                </select>
+            </div>
+
+            <div class="city-container">
+                <label for="City">City</label>
+                <select name="city" id="city" oninput="validation()">
+                    <option value="">Select Your City</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Indore">Indore</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Banglore">Banglore</option>
+                    <option value="Chennai">Chennaie</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Ujjain">Ujjain</option>
+                    <option value="Raipur">Raipur</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Nashik">Nashik</option>
+                </select>
+            </div>
+
+            <div class="captcha-container">
+                <label for="captcha">Captcha</label>
+                <h2 id="displayCaptcha"></h2>
+
+                <span><i class="fa fa-refresh" style="font-size:40px;color:red" title="Click to Re-Generate Captcha"
+                        onclick="generateCaptcha()"></i></span>
+                <input type="text" name="captcha" id="captchaInput" maxlength="6" oninput="validation()">
+            </div>
+            <h2 id="captchaError"></h2>
+            <div>
+                <input type="submit" id="submitBtn" value="Register" disabled>
+            </div>
+        </form>
+    </div>
+
+    <img src="img/AB1_standing.png" alt="" class="ab1" width="">
+
+    <script src="js/registration_form.js"></script>
+
+</body>
+
+</html>

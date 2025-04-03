@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+
+#bg {
+    background: url('../img/Ragistraion_Background.png') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(4px);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+    font-size: 36px;
+    color: white;
+    text-shadow: 3px 3px 5px yellow ,-3px 3px 5px red ;
+    /* font-weight: bold; */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.content img {
+    width: 80%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 3px solid #ffffff;
+   
+}
+
+h2 {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px blue;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.icon-container {
+    margin-top: 10px;
+}
+
+.btn_container {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_container a {
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #0066cc, #00cc99);
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition:  0.3s ease;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn_container a:hover {
+    background: linear-gradient(135deg, #00cc99, #0066cc);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
